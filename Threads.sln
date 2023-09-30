@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp3", "WpfApp3\WpfApp3.csproj", "{07FC30B5-5775-40C3-B45C-112CEC147E8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Threads", "WpfApp3\Threads.csproj", "{07FC30B5-5775-40C3-B45C-112CEC147E8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
