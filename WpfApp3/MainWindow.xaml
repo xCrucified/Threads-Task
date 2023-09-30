@@ -1,9 +1,9 @@
-﻿<Window x:Class="WpfApp3.MainWindow"
+﻿<Window x:Class="ThreadsandTokens.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp3"
+        xmlns:local="clr-namespace:ThreadsandTokens"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -22,21 +22,35 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            
-            <StackPanel Grid.Column="0">
-                <TextBox Margin="100, 10" Name="RightNum"/>
-                <TextBox Margin="100, 10" Name="LeftNum"/>
-            </StackPanel>
 
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <DockPanel LastChildFill="False" Grid.Column="0">
+                <TextBox DockPanel.Dock = "Left" Width="150" Height="30" Margin="10" Name="RightNum"/>
+                <TextBox DockPanel.Dock = "Left" Width="150" Height="30" Margin="10, 0" Name="LeftNum"/>
+            </DockPanel>
+                <Button Grid.Row="1" DockPanel.Dock="Top" Margin="0" Width="150" Height="30"  Name ="StartSimple" Content="Start" Click="Start_Click"/>
+            </Grid>
+            
             <StackPanel Grid.Row="1">
-                <Button Margin="10" Height="20" Name ="Start" Content="Start" Click="Start_Click"/>
-                <Button Margin="10" Height="20" Name ="Stop" Content="Stop" Click="Stop_Click"/>
+                <Button Margin="5" Height="20" Name ="StopSimple" Content="Stop" Click="Stop_Click"/>
+                <Button Margin="5" Height="20" Name ="PauseSimple" Content="Pause" Click="PauseSimple_Click"/>
+                <Button Margin="5" Height="20" Name ="ResumeSimple" Content="Resume" Click="ResumeSimple_Click"/>
             </StackPanel>
         </Grid>
 
-        <ListBox Grid.Column="1" Name ="SimpleNumbers" Margin="10">
-            
-        </ListBox>
+        <ListBox Grid.Column="1" Name ="SimpleNumbers" Margin="50, 90, 50, 10"/>
+        <ListBox Grid.Column="1" Grid.Row="1" Name ="FibonacciNumbers" Margin="50, 30, 50, 70"/>
 
+        <StackPanel Grid.Row="1" Margin="0, 50">
+            
+        <Button Margin="5" Height="20" Name ="StopFibonacci" Content="Stop" Click="StopFibonacci_Click"/>
+        <Button Margin="5" Height="20" Name ="PauseFibonacci" Content="Pause" Click="PauseFibonacci_Click"/>
+        <Button Margin="5" Height="20" Name ="ResumeFibonacci" Content="Resume" Click="ResumeFibonacci_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
